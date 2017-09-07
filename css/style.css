@@ -1,0 +1,120 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  padding: 40px 10px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  min-width: 320px;
+  max-width: 100%;
+}
+ul,
+ol {
+  margin: 0;
+}
+input::-webkit-input-placeholder {
+  color: #283645;
+  font-size: 16px;
+  opacity: .8;
+}
+input::-moz-placeholder {
+  color: #283645;
+  font-size: 16px;
+  opacity: .8;
+}
+input:-ms-input-placeholder {
+  color: #283645;
+  font-size: 16px;
+  opacity: .8;
+}
+input::placeholder {
+  color: #283645;
+  font-size: 16px;
+  opacity: .8;
+}
+input:disabled,
+button:disabled {
+  opacity: .4;
+}
+input:focus {
+  border: 2px solid transparent;
+}
+.contacts fieldset {
+  padding: 40px 20px;
+  font-size: 18px;
+  background-color: #f2f2f2;
+}
+.contacts .form-item-container {
+  margin-bottom: 20px;
+}
+.contacts label {
+  display: inline-block;
+  width: 80px;
+}
+.contacts input {
+  width: 85%;
+  height: 50px;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.contacts .send-form {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 25px;
+  text-align: center;
+  border: solid 2px #252525;
+  border-radius: 10px;
+}
+input.valid-class {
+  border: solid 2px green;
+  background: url(../img/ok.png) no-repeat 97% center;
+}
+input.invalid-class {
+  border: solid 2px red;
+  background: url(../img/cancel.png) no-repeat 97% center;
+}
+@media (min-width: 960px) {
+  input::-webkit-input-placeholder {
+    color: #283645;
+    font-size: 14px;
+    opacity: 1.0;
+  }
+  input::-moz-placeholder {
+    color: #283645;
+    font-size: 14px;
+    opacity: 1.0;
+  }
+  input:-ms-input-placeholder {
+    color: #283645;
+    font-size: 14px;
+    opacity: 1.0;
+  }
+  input::placeholder {
+    color: #283645;
+    font-size: 14px;
+    opacity: 1.0;
+  }
+  .contacts fieldset {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  .contacts .form-item-container {
+    margin-bottom: 20px;
+  }
+  .contacts label {
+    display: inline-block;
+    width: 80px;
+  }
+  .contacts input {
+    width: 70%;
+    height: 30px;
+    padding-left: 10px;
+  }
+}
+/*  Скобочка медиавыражений */

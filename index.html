@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<head>
+	<meta charset="UTF-8">
+	<title>Test task for Endy</title>
+	<meta name="description" content="Тестовое задание">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.png" >
+</head>
+</head>
+<body>
+<form action="#echo" class="form contacts" name="contacts">
+	<fieldset>
+	<legend>Укажите Ваши контактные данные</legend>
+		
+		<div class="form-item-container">
+			<label for="name">Имя:</label>
+			<input type="text"  id="name" name="name" required placeholder="Иванов Иван Иванович">
+		</div>
+		<div class="form-item-container">
+			<label for="tel">Телефон:</label>
+			<input type="text" id="tel" name="tel" required placeholder="В формате +7(999)999-99-99">
+		</div>	
+		
+		<div class="form-item-container">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required placeholder="example@gmail.com">
+		</div>
+		<button type="sumbit" class="send-form" disabled> Отправить </button>
+	</fieldset>
+</form>
+<script type="text/javascript" src="js/index.js"></script>	
+</body>
+</html>
