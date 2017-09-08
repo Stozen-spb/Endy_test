@@ -7,7 +7,7 @@ var tels = document.querySelectorAll('.form-tel');
 var emails = document.querySelectorAll('.form-email');
 
 for (let i = 0; i < names.length; i++) {
-	names[i].addEventListener('blur', function validateName(e) {
+	names[i].addEventListener('blur', function validateName(event) {
 		// проверка имени на соответсвие Мамин-Сибиряк Эмануэль-Юлиан Панкратц
 		
 		if ( !(event.target.value.match(/[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}/ )) ) {
@@ -28,7 +28,7 @@ for (let i = 0; i < names.length; i++) {
 }
 
 for (let i = 0; i < tels.length; i++) {
-	tels[i].addEventListener('blur',function validateTel (e) {
+	tels[i].addEventListener('blur',function validateTel (event) {
 		
 		let allNumbers=event.target.value.match(/\d/g);
 		let summaAllnumbers = 0;
@@ -63,7 +63,7 @@ for (let i = 0; i < tels.length; i++) {
 
 for (let i = 0; i < emails.length; i++) {
 
-	emails[i].addEventListener('blur', function validateEmail (e) {
+	emails[i].addEventListener('blur', function validateEmail (event) {
     
     if ( !(event.target.value.match(/[a-zA-z]{2,}\@gmail\.com/ )) ) {
 
@@ -115,7 +115,7 @@ function getCoords(elem) { // координаты относ документа
 
   for (let i = 0; i < forms.length; i++) { // вешаем обработчики на все формы
   
-  forms[i].addEventListener("focus", function(e) {
+  forms[i].addEventListener("focus", function(event) {
       if (!event.target.hasAttribute('data-placeholder')) return;
       ShowPlaceholderTooltip.call(event.target); // вызываем функцию с контекстом к текущему элементу
 
@@ -124,7 +124,7 @@ function getCoords(elem) { // координаты относ документа
         
     }, true);
  
-  forms[i].addEventListener("blur",function(e) {
+  forms[i].addEventListener("blur",function(event) {
       if (!event.target.hasAttribute('data-placeholder')) return;
       removePlaceHolderTooltip();
         
