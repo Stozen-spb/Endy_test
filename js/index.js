@@ -134,7 +134,6 @@ function getCoords(elem) { // координаты относ документа
 
  
     function ShowPlaceholderTooltip () { // показывает подсказку при фокусе
-      this.value='';
       let parentCoords = getCoords(this);
       let placeholderTooltip = document.createElement('div');
       placeholderTooltip.classList.add('placeholder-tooltip');
