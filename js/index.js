@@ -2,11 +2,11 @@
 
 
 
-var names = document.getElementsByName('name');
-var tels = document.getElementsByName('tel');
-var emails = document.getElementsByName('email');
+var names = document.querySelectorAll('.form-name');
+var tels = document.querySelectorAll('.form-tel');
+var emails = document.querySelectorAll('.form-email');
 
-for (var i = 0; i < names.length; i++) {
+for (let i = 0; i < names.length; i++) {
 	names[i].addEventListener('blur', function validateName(e) {
 		// проверка имени на соответсвие Мамин-Сибиряк Эмануэль-Юлиан Панкратц
 		
@@ -27,7 +27,7 @@ for (var i = 0; i < names.length; i++) {
 	});
 }
 
-for (var i = 0; i < tels.length; i++) {
+for (let i = 0; i < tels.length; i++) {
 	tels[i].addEventListener('blur',function validateTel (e) {
 		
 		let allNumbers=event.target.value.match(/\d/g);
@@ -37,12 +37,12 @@ for (var i = 0; i < tels.length; i++) {
 		if ( !(allNumbers===null) ) {
 			
 				// находим сумму всех чисел поля
-				for (var i = 0; i < allNumbers.length; i++) {
+				for (let i = 0; i < allNumbers.length; i++) {
 					summaAllnumbers += +allNumbers[i];
 				}
 		}
-	    
-	    if ( !(event.target.value.match(/\+7\(\d{3}\)\d{3}\-\d{2}\-\d{2}/ ) || summaAllnumbers > 40 )  ) {
+	    // проверка на корректность формата номера и сумму
+	    if ( !(event.target.value.match(/\+7\(\d{3}\)\d{3}\-\d{2}\-\d{2}/ ) && summaAllnumbers > 40 )  ) {
 	    	//invalid field
 	      event.target.classList.add("invalid-class");
 	      alert('Формат телефона: +7(999)999-99-99');
@@ -61,10 +61,10 @@ for (var i = 0; i < tels.length; i++) {
    
 }
 
-for (var i = 0; i < emails.length; i++) {
+for (let i = 0; i < emails.length; i++) {
 
 	emails[i].addEventListener('blur', function validateEmail (e) {
-    // проверка на соответсвие номера формату +7(999)999-99-99 и сумме цифр строго больше 40
+    
     if ( !(event.target.value.match(/[a-zA-z]{2,}\@gmail\.com/ )) ) {
 
       event.target.classList.add("invalid-class");
@@ -84,18 +84,18 @@ for (var i = 0; i < emails.length; i++) {
 
 // проверка всех полей на валидность, есди да то включаем кнопку submit
 function makeSubmitButtonEnabled() {
-	var inputs = this.form.getElementsByTagName('input');
-	var sumbitButton = this.form.getElementsByTagName('button');
-	var counter = 0;
+	let inputs = this.form.getElementsByTagName('input');
+	let sumbitButton = this.form.querySelector('.send-form');
+	let counter = 0;
 	
-	for (var i = 0; i < inputs.length; i++) {
+	for (let i = 0; i < inputs.length; i++) {
 	if 	( inputs[i].classList.contains('valid-class') )
 		counter++;
 	}
 	
 
 	if ( inputs.length==counter ) 
-		sumbitButton[0].disabled = false;
+		sumbitButton.disabled = false;
 
 }
 
