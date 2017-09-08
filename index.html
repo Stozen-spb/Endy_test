@@ -19,17 +19,30 @@
 		
 		<div class="form-item-container">
 			<label for="name">Имя:</label>
-			<input type="text" class="form-name"  id="name" name="name" required placeholder="Иванов Иван Иванович">
+			<input type="text" class="form-name"  id="name" name="name" required data-placeholder="Иванов Иван Иванович" placeholder="Иванов Иван Иванович">
 		</div>
 		<div class="form-item-container">
 			<label for="tel">Телефон:</label>
-			<input type="text" class="form-tel" id="tel" name="tel" required placeholder="В формате +7(999)999-99-99">
+			<input type="text" class="form-tel" id="tel" name="tel" required data-placeholder="В формате +7(999)999-99-99" placeholder="В формате +7(999)999-99-99">
 		</div>	
 		
 		<div class="form-item-container">
 			<label for="email">Email:</label>
-			<input type="email" class="form-email" id="email" name="email" required placeholder="example@gmail.com">
+			<input type="email" class="form-email" id="email" name="email" required data-placeholder="example@gmail.com" placeholder="example@gmail.com">
 		</div>
+		<button type="submit" class="send-form" disabled> Отправить </button>
+	</fieldset>
+</form>
+
+<form action="#echo" class="form contacts" name="contacts">
+	<fieldset>
+	<legend>Введите ФИО вашего любимого писателя (по-русски) </legend>
+		
+		<div class="form-item-container">
+			<label for="nameWriter">Имя:</label>
+			<input type="text" class="form-name"  id="nameWriter" name="name" required data-placeholder="Пушкин Александр Сергеевич" placeholder="Пушкин Александр Сергеевич">
+		</div>
+		
 		<button type="submit" class="send-form" disabled> Отправить </button>
 	</fieldset>
 </form>

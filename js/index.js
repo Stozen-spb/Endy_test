@@ -13,7 +13,7 @@ for (let i = 0; i < names.length; i++) {
 		if ( !(event.target.value.match(/[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}/ )) ) {
 	  //invalid field	
       event.target.classList.add("invalid-class");
-      alert('Формат ФИО: Иванов-Петров Алексей Владимирович');
+      
       //...вернуть фокус обратно
       //nameField.focus();
        return false;
@@ -45,7 +45,7 @@ for (let i = 0; i < tels.length; i++) {
 	    if ( !(event.target.value.match(/\+7\(\d{3}\)\d{3}\-\d{2}\-\d{2}/ ) && summaAllnumbers > 40 )  ) {
 	    	//invalid field
 	      event.target.classList.add("invalid-class");
-	      alert('Формат телефона: +7(999)999-99-99');
+	      
       	  
 	      //... вернуть фокус обратно
 	      //telField.focus();
@@ -68,7 +68,7 @@ for (let i = 0; i < emails.length; i++) {
     if ( !(event.target.value.match(/[a-zA-z]{2,}\@gmail\.com/ )) ) {
 
       event.target.classList.add("invalid-class");
-      alert('Формат почты: example@gmail.com');
+   
       //... вернуть фокус обратно
       //emailField.focus();
       return false;
@@ -99,3 +99,53 @@ function makeSubmitButtonEnabled() {
 
 }
 
+// Плагин анимированный плейсхолдер
+
+function getCoords(elem) { // координаты относ документа
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset,
+  };
+}
+  var input = document.querySelectorAll('[data-placeholder]'); // кастомные интпуты
+  var forms = document.getElementsByTagName('form');
+
+
+  for (let i = 0; i < forms.length; i++) { // вешаем обработчики на все формы
+  
+  forms[i].addEventListener("focus", function(e) {
+      if (!event.target.hasAttribute('data-placeholder')) return;
+      ShowPlaceholderTooltip.call(event.target); // вызываем функцию с контекстом к текущему элементу
+
+      // var g = ShowPlaceholderTooltip.bind(event.target); вариант с bind
+      // g();
+        
+    }, true);
+ 
+  forms[i].addEventListener("blur",function(e) {
+      if (!event.target.hasAttribute('data-placeholder')) return;
+      removePlaceHolderTooltip();
+        
+    }, true);
+}
+    
+
+ 
+    function ShowPlaceholderTooltip () { // показывает подсказку при фокусе
+      this.value='';
+      let parentCoords = getCoords(this);
+      let placeholderTooltip = document.createElement('div');
+      placeholderTooltip.classList.add('placeholder-tooltip');
+      placeholderTooltip.textContent = this.dataset.placeholder;
+      document.body.appendChild(placeholderTooltip);
+      placeholderTooltip.style.top = parentCoords.top - placeholderTooltip.offsetHeight  +'px'; //координаты подсказки
+      placeholderTooltip.style.left = parentCoords.left + 'px';
+    }
+
+     function removePlaceHolderTooltip () { // убираем подсказку
+      let tooltip = document.querySelector('.placeholder-tooltip');
+      document.body.removeChild(tooltip);
+ 
+    }   
