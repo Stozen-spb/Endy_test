@@ -42,6 +42,12 @@ button:disabled {
 input:focus {
   border: 2px solid transparent;
 }
+.info {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 40px 20px;
+  margin-bottom: 50px;
+}
 .contacts {
   margin-bottom: 50px;
 }
@@ -87,10 +93,6 @@ input.invalid-class {
   }
 }
 /*Стили JS placeholder*/
-.placeholder {
-  color: red;
-  opacity: .7;
-}
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -120,6 +122,12 @@ input:focus::-webkit-input-placeholder {
     color: #283645;
     font-size: 14px;
     opacity: 1.0;
+  }
+  .info {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 50px;
   }
   .contacts fieldset {
     width: 500px;

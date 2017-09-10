@@ -7,45 +7,53 @@
 	<meta name="description" content="Тестовое задание">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="shortcut icon" href="favicon.png" >
 </head>
 </head>
 <body>
-<form action="#echo" class="form contacts" name="contacts">
-	<fieldset>
-	<legend>Укажите Ваши контактные данные</legend>
-		
-		<div class="form-item-container">
-			<label for="name">Имя:</label>
-			<input type="text" class="form-name"  id="name" name="name" required data-placeholder="Иванов Иван Иванович" placeholder="Иванов Иван Иванович">
-		</div>
-		<div class="form-item-container">
-			<label for="tel">Телефон:</label>
-			<input type="text" class="form-tel" id="tel" name="tel" required data-placeholder="В формате +7(999)999-99-99" placeholder="В формате +7(999)999-99-99">
-		</div>	
-		
-		<div class="form-item-container">
-			<label for="email">Email:</label>
-			<input type="email" class="form-email" id="email" name="email" required data-placeholder="example@gmail.com" placeholder="example@gmail.com">
-		</div>
-		<button type="submit" class="send-form" disabled> Отправить </button>
-	</fieldset>
-</form>
+	<div class="info">
+		<p>Проверка формы: <br>
+		- ФИО - три слова, каждое слово начинается с большой буквы, кириллица. <br>
+		- Телефон - формат ввода +7 (999) 999-99-99. Дополнительное условие для телефона. Сумма всех цифр телефона должны быть больше 40. <br>
+		- Email - должен заканчиваться на gmail.com
+		</p>
+	</div>
+	
+	<form action="#echo" class="form contacts" name="contacts">
+		<fieldset>
+		<legend>Укажите Ваши контактные данные</legend>
+			
+			<div class="form-item-container">
+				<label for="name">Имя:</label>
+				<input type="text" class="form-name"  id="name" name="name" required data-placeholder="Иванов Иван Иванович" placeholder="Иванов Иван Иванович">
+			</div>
+			<div class="form-item-container">
+				<label for="tel">Телефон:</label>
+				<input type="text" class="form-tel" id="tel" name="tel" required data-placeholder="В формате +7(999)999-99-99" placeholder="В формате +7(999)999-99-99">
+			</div>	
+			
+			<div class="form-item-container">
+				<label for="email">Email:</label>
+				<input type="email" class="form-email" id="email" name="email" required data-placeholder="example@gmail.com" placeholder="example@gmail.com">
+			</div>
+			<button type="submit" class="send-form" disabled> Отправить </button>
+		</fieldset>
+	</form>
 
-<form action="#echo" class="form contacts" name="contacts">
-	<fieldset>
-	<legend>Введите ФИО вашего любимого писателя (по-русски) </legend>
-		
-		<div class="form-item-container">
-			<label for="nameWriter">Имя:</label>
-			<input type="text" class="form-name"  id="nameWriter" name="name" required data-placeholder="Пушкин Александр Сергеевич" placeholder="Пушкин Александр Сергеевич">
-		</div>
-		
-		<button type="submit" class="send-form" disabled> Отправить </button>
-	</fieldset>
-</form>
-<script type="text/javascript" src="js/index.js"></script>	
+	<form action="#echo" class="form contacts" name="contacts">
+		<fieldset>
+		<legend>Введите ФИО вашего любимого писателя (по-русски) </legend>
+			
+			<div class="form-item-container">
+				<label for="nameWriter">Имя:</label>
+				<input type="text" class="form-name"  id="nameWriter" name="name" required data-placeholder="Пушкин Александр Сергеевич" placeholder="Пушкин Александр Сергеевич">
+			</div>
+			
+			<button type="submit" class="send-form" disabled> Отправить </button>
+		</fieldset>
+	</form>
+	<script type="text/javascript" src="js/index.js"></script>	
 </body>
 </html>
