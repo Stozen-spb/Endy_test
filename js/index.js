@@ -1,12 +1,12 @@
 
 
-
+(function () {
 
 var names = document.querySelectorAll('.form-name');
 var tels = document.querySelectorAll('.form-tel');
 var emails = document.querySelectorAll('.form-email');
 
-for (let i = 0; i < names.length; i++) {
+for (var i = 0; i < names.length; i++) {
 	names[i].addEventListener('blur', function validateName(event) {
 		// проверка имени на соответсвие Мамин-Сибиряк Эмануэль-Юлиан Панкратц
 		
@@ -27,17 +27,17 @@ for (let i = 0; i < names.length; i++) {
 	});
 }
 
-for (let i = 0; i < tels.length; i++) {
+for (var i = 0; i < tels.length; i++) {
 	tels[i].addEventListener('blur',function validateTel (event) {
 		
-		let allNumbers=event.target.value.match(/\d/g);
-		let summaAllnumbers = 0;
+		var allNumbers=event.target.value.match(/\d/g);
+		var summaAllnumbers = 0;
 		
 		//проверка на наличие чисел
 		if ( !(allNumbers===null) ) {
 			
 				// находим сумму всех чисел поля
-				for (let i = 0; i < allNumbers.length; i++) {
+				for (var i = 0; i < allNumbers.length; i++) {
 					summaAllnumbers += +allNumbers[i];
 				}
 		}
@@ -61,7 +61,7 @@ for (let i = 0; i < tels.length; i++) {
    
 }
 
-for (let i = 0; i < emails.length; i++) {
+for (var i = 0; i < emails.length; i++) {
 
 	emails[i].addEventListener('blur', function validateEmail (event) {
     
@@ -84,11 +84,11 @@ for (let i = 0; i < emails.length; i++) {
 
 // проверка всех полей на валидность, есди да то включаем кнопку submit
 function makeSubmitButtonEnabled() {
-	let inputs = this.form.getElementsByTagName('input');
-	let sumbitButton = this.form.querySelector('.send-form');
-	let counter = 0;
+	var inputs = this.form.getElementsByTagName('input');
+	var sumbitButton = this.form.querySelector('.send-form');
+	var counter = 0;
 	
-	for (let i = 0; i < inputs.length; i++) {
+	for (var i = 0; i < inputs.length; i++) {
 	if 	( inputs[i].classList.contains('valid-class') )
 		counter++;
 	}
@@ -98,11 +98,14 @@ function makeSubmitButtonEnabled() {
 		sumbitButton.disabled = false;
 
 }
+}());
 
 // Плагин анимированный плейсхолдер
 
+(function () {
+
 function getCoords(elem) { // координаты относ документа
-  let box = elem.getBoundingClientRect();
+  var box = elem.getBoundingClientRect();
 
   return {
     top: box.top + pageYOffset,
@@ -113,7 +116,7 @@ function getCoords(elem) { // координаты относ документа
   var forms = document.getElementsByTagName('form');
 
 
-  for (let i = 0; i < forms.length; i++) { // вешаем обработчики на все формы
+  for (var i = 0; i < forms.length; i++) { // вешаем обработчики на все формы
   
   forms[i].addEventListener("focus", function(event) {
       if (!event.target.hasAttribute('data-placeholder')) return;
@@ -134,17 +137,20 @@ function getCoords(elem) { // координаты относ документа
 
  
     function ShowPlaceholderTooltip () { // показывает подсказку при фокусе
-      let parentCoords = getCoords(this);
-      let placeholderTooltip = document.createElement('div');
+      var parentCoords = getCoords(this);
+      var placeholderTooltip = document.createElement('div');
       placeholderTooltip.classList.add('placeholder-tooltip');
       placeholderTooltip.textContent = this.dataset.placeholder;
       document.body.appendChild(placeholderTooltip);
+      placeholderTooltip.style.position = 'absolute';
       placeholderTooltip.style.top = parentCoords.top - placeholderTooltip.offsetHeight  +'px'; //координаты подсказки
       placeholderTooltip.style.left = parentCoords.left + 'px';
     }
 
      function removePlaceHolderTooltip () { // убираем подсказку
-      let tooltip = document.querySelector('.placeholder-tooltip');
+      var tooltip = document.querySelector('.placeholder-tooltip');
       document.body.removeChild(tooltip);
  
-    }   
+    }  
+
+    }()); 
