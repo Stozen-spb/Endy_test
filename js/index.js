@@ -10,7 +10,7 @@ for (var i = 0; i < names.length; i++) {
 	names[i].addEventListener('blur', function validateName(event) {
 		// проверка имени на соответсвие Мамин-Сибиряк Эмануэль-Юлиан Панкратц
 		
-		if ( !(event.target.value.match(/[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}/ )) ) {
+		if ( !(event.target.value.match(/^[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}\s[А-Я]{1}[А-Яа-я-]{1,}$/ )) ) {
 	  //invalid field	
       event.target.classList.add("invalid-class");
       
@@ -42,7 +42,7 @@ for (var i = 0; i < tels.length; i++) {
 				}
 		}
 	    // проверка на корректность формата номера и сумму
-	    if ( !(event.target.value.match(/\+7\(\d{3}\)\d{3}\-\d{2}\-\d{2}/ ) && summaAllnumbers > 40 )  ) {
+	    if ( !(event.target.value.match(/^\+7\(\d{3}\)\d{3}\-\d{2}\-\d{2}$/ ) && summaAllnumbers > 40 )  ) {
 	    	//invalid field
 	      event.target.classList.add("invalid-class");
 	      
@@ -65,7 +65,7 @@ for (var i = 0; i < emails.length; i++) {
 
 	emails[i].addEventListener('blur', function validateEmail (event) {
     
-    if ( !(event.target.value.match(/[a-zA-z]{2,}\@gmail\.com/ )) ) {
+    if ( !(event.target.value.match(/^[a-zA-z]{2,}\@gmail\.com$/ )) ) {
 
       event.target.classList.add("invalid-class");
    
