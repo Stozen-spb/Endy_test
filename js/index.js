@@ -85,17 +85,14 @@ for (var i = 0; i < emails.length; i++) {
 // проверка всех полей на валидность, есди да то включаем кнопку submit
 function makeSubmitButtonEnabled() {
 	var inputs = this.form.getElementsByTagName('input');
-	var sumbitButton = this.form.querySelector('.send-form');
-	var counter = 0;
-	
-	for (var i = 0; i < inputs.length; i++) {
-	if 	( inputs[i].classList.contains('valid-class') )
-		counter++;
+	var submitButton = this.form.querySelector('.send-form');
+	var validInputs = this.form.querySelectorAll('.valid-class');
+
+	if ( inputs.length == validInputs.length) {
+		submitButton.disabled = false;
 	}
 	
-
-	if ( inputs.length==counter ) 
-		sumbitButton.disabled = false;
+	
 
 }
 }());
